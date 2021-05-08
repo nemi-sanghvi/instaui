@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+
+    <title>IG-UI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+        .whole-body * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+        }
+
+        .whole-body {
+            font-family: 'Italianno', 'cursive';
+            font-family: 'Poppins', 'Roboto', sans-serif, 'Lato';
+            margin: 0;
+            background-color: grey;
+        }
+
+        .container {
+            margin: 0 auto;
+            max-width: 580px;
+            padding: 0px 15px;
+            width: 100%;
+            /* background-color: #f2f6f9; */
+            background-color: #000000;
+            color: white;
+        }
+
+        .insta-ui .header-part {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 7px 15px 0px 15px;
+        }
+
+        .insta-ui .story-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .insta-ui .story-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+        }
+
+        .insta-ui .upoad-box {
+            flex-wrap: nowrap;
+            padding: 10px 0px;
+            display: flex;
+            overflow-x: scroll;
+            overflow: auto;
+            align-items: flex-end;
+            white-space: nowrap;
+        }
+
+        .insta-ui .first-story-image {
+            margin-bottom: 6px;
+            border: 2px solid #b00379;
+            border-radius: 50%;
+        }
+
+        .insta-ui .upload-part {
+            margin-right: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 15px;
+        }
+
+        .insta-ui .story-image.select {
+            border: 3px solid transparent;
+        }
+
+        .insta-ui .first-story-image.select {
+            background: linear-gradient(180deg, rgba(176, 3, 121, 1) 12%, rgba(247, 155, 69, 1) 100%);
+        }
+
+        .insta-ui .border-line {
+            margin-bottom: 20px;
+        }
+
+        .insta-ui .feed-image img {
+            border-radius: 30px;
+        }
+
+        .insta-ui .user-box {
+            display: flex;
+            align-items: center;
+        }
+
+        .insta-ui .feed-w-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .insta-ui .first-story-image.feed {
+            border: none;
+        }
+
+        .insta-ui .user-choice-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 12px 0px;
+        }
+
+        .insta-ui .user-like-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .insta-ui .icon-space {
+            padding: 0px 10px;
+        }
+
+        .insta-ui .feed-image {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .insta-ui .footer-icon {
+            margin: 0px 40px;
+
+        }
+
+        .insta-ui .footer-plate {
+            display: flex;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            background-color: #f4f4f4;
+            left: 0;
+            right: 0;
+            width: 10;
+            max-width: 580px;
+            margin: 0 auto;
+            padding: 8px 0px;
+            justify-content: center;
+            border-top: 2px solid #eeee;
+        }
+
+        .insta-ui .footer-part {
+            position: relative;
+            margin-top: 65px;
+        }
+
+        .insta-ui .watch-stories {
+            padding-top: 61px;
+        }
+
+        .insta-ui .head-up {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background-color: #f4f4f4;
+            max-width: 580px;
+            z-index: 9999;
+            border-bottom: 1px solid #eeee;
+
+        }
+
+        .insta-ui .font-icon a {
+            color: black;
+            font-size: 20px;
+            color: #828282;
+        }
+
+        .insta-ui .stories-text.font-icon a {
+            font-size: 13px;
+        }
+
+        .insta-ui .story-image.feed {
+            border: 2px solid #b00379;
+        }
+
+        .insta-ui .insta-text h2 {
+            color: black;
+            font-family: 'Italianno', cursive;
+            font-weight: 500;
+            font-size: 49px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="whole-body">
+        <!-- sec-1 -->
+        <div class="insta-ui">
+            <div class="container">
+                <div class="head-up spacing">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="header-part">
+                                <div class="camero-icon font-icon">
+                                    <a href=""><i class="fas fa-camera"></i></a>
+                                </div>
+                                <div class="insta-text">
+                                    <h2>Instagram</h2>
+                                </div>
+                                <div class="send-message font-icon">
+                                    <a href=""><i class="fas fa-paper-plane"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sec-2 -->
+                <div class="watch-stories spacing">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="story-box">
+                                <div class="story-text">
+                                    <small>Stories</small>
+                                </div>
+                                <div class="stories-text font-icon">
+                                    <small><a href=""><i class="fas fa-play me-3"></i></a>Watch all</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <form action="">
+                                <div class="upoad-box">
+                                    <!--  -->
+                                    <div class="upload-part">
+                                        <div class="first-story-image select">
+                                            <div class="input-group ">
+                                                <input type="file" id="file1" name="image" accept="image/*" capture=""
+                                                    style="display:none">
+                                                <label for="file1"><img src="./images/feedhoney.jpg"
+                                                        class="img-fluid story-image select" id="upfile1"
+                                                        style="cursor:pointer"></label>
+
+                                            </div>
+                                        </div>
+                                        <div class="story-text">
+                                            <label for="file1" class="lsetting text-muted"> <small>Your Story</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="upload-part">
+                                        <div class="first-story-image">
+                                            <img src="./images/feedhoney.jpg" class="img-fluid story-image" alt="">
+                                        </div>
+                                        <div class="story-text">
+                                            <small>Alina</small>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="upload-part">
+                                        <div class="first-story-image">
+                                            <img src="./images/feedhoney.jpg" class="img-fluid story-image" alt="">
+                                        </div>
+                                        <div class="story-text">
+                                            <small>Alina</small>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="upload-part">
+                                        <div class="first-story-image">
+                                            <img src="./images/feedhoney.jpg" class="img-fluid story-image" alt="">
+                                        </div>
+                                        <div class="story-text">
+                                            <small>Alina</small>
+                                        </div>
+                                    </div>
+                                    <!--  -->
+                                    <div class="upload-part">
+                                        <div class="first-story-image">
+                                            <img src="./images/feedhoney.jpg" class="img-fluid story-image" alt="">
+                                        </div>
+                                        <div class="story-text">
+                                            <small>Alina</small>
+                                        </div>
+                                    </div>
+                                    <div class="upload-part">
+                                        <div class="first-story-image">
+                                            <img src="./images/feedhoney.jpg" class="img-fluid story-image" alt="">
+                                        </div>
+                                        <div class="story-text">
+                                            <small>Alina</small>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--  -->
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-line">
+                <!-- sec-3 -->
+                <div class="feed-part">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="feed-w-box">
+                                <div class="user-box">
+                                    <div class="first-story-image feed me-3">
+                                        <img src="./images/feedhoney.jpg" class="img-fluid story-image feed" alt="">
+                                    </div>
+                                    <div class="feed-text">
+                                        <small>Alina</small>
+                                    </div>
+                                </div>
+                                <div class="user-choice font-icon">
+                                    <a href=""><i class="fas fa-ellipsis-h"></i></a>
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="feed-image">
+                                <img src="./images/backgroundn-3.jpg" class="img-fluid" alt="">
+                            </div>
+                            <!-- comment -->
+                            <div class="user-choice-box">
+                                <div class="user-like-box">
+                                    <div class="heart-icon icon-space font-icon">
+                                        <a href=""><i class="far fa-heart"></i></a>
+                                    </div>
+                                    <div class="comment-icon icon-space font-icon">
+                                        <a href=""><i class="far fa-comment"></i></a>
+                                    </div>
+                                    <div class="send-message icon-space font-icon">
+                                        <a href=""><i class="far fa-paper-plane"></i></a>
+                                    </div>
+                                </div>
+                                <div class="save-image-icon icon-space font-icon">
+                                    <a href=""><i class="far fa-bookmark"></i></a>
+                                </div>
+                            </div>
+                            <div class="user-likes-count mb-4">
+                                <b>2.875 Likes</b><br>
+                                <strong> Anisha &nbsp; Hi!! <span class="text-info ms-3">#aftersolong</span></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+
+                </div>
+                <!-- sec-4 -->
+                <div class="footer-part">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-plate">
+                                <div class="home-icon footer-icon font-icon">
+                                    <a href=""><i class="fas fa-home"></i></a>
+                                </div>
+                                <div class="search-icon footer-icon font-icon">
+                                    <a href=""><i class="fas fa-search"></i></a>
+                                </div>
+                                <div class="insta-icon footer-icon font-icon">
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="heart-icon footer-icon font-icon">
+                                    <a href=""><i class="far fa-heart"></i></a>
+                                </div>
+                                <div class="user-icon footer-icon font-icon">
+                                    <a href=""><i class="far fa-user"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b19c60c8de.js" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
