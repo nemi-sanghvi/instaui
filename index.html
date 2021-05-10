@@ -71,7 +71,7 @@
             display: flex;
             overflow-x: scroll;
             overflow: auto;
-            align-items: flex-end;
+            align-items: center;
             white-space: nowrap;
         }
 
@@ -206,6 +206,46 @@
             font-family: 'Italianno', cursive;
             font-weight: 500;
             font-size: 49px;
+        }
+
+        /* media css */
+        @media screen and (max-width: 767px) {
+            .insta-ui .story-image {
+                width: 40px;
+                height: 40px;
+            }
+
+            .insta-ui .first-story-image {
+                margin-bottom: initial;
+                border: 1px solid #b00379;
+            }
+
+            .insta-ui .footer-icon {
+                margin: 0px 30px;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .insta-ui .story-image {
+                width: 30px;
+                height: 30px;
+            }
+            .insta-ui .upload-part{
+                margin: 0px 7px;
+            }
+            .insta-ui .footer-icon{
+                margin: 0px 20px;
+            }
+            .insta-ui .font-icon a{
+                font-size: 16px;
+            }
+            .insta-ui .footer-part{
+                margin-top: 20px;
+            }
+            .insta-ui .insta-text h2{
+                font-size: 35px;
+            }
+            .insta-ui .story-box{margin-top: 20px;}
         }
     </style>
 </head>
