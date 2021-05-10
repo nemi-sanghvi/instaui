@@ -57,12 +57,20 @@
         }
 
         .insta-ui .story-image {
-            width: 30px;
-            height: 30px;
+            width: 65px;
+            height: 65px;
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid transparent;
             cursor: pointer;
+        }
+
+        .insta-ui .story-text {
+            width: 70px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .insta-ui .upoad-box {
@@ -87,10 +95,6 @@
             justify-content: center;
             align-items: center;
             margin: 0px 8px;
-        }
-
-        .insta-ui .story-image.select {
-            border: 3px solid transparent;
         }
 
         .insta-ui .first-story-image.select {
@@ -213,10 +217,6 @@
 
         /* media css */
         @media screen and (max-width: 767px) {
-            .insta-ui .story-image {
-                width: 40px;
-                height: 40px;
-            }
 
             .insta-ui .first-story-image {
                 margin-bottom: initial;
@@ -226,13 +226,13 @@
             .insta-ui .footer-icon {
                 margin: 0px 30px;
             }
+            .insta-ui .story-image {
+            width: 50px;
+            height: 50px;
+            }
         }
 
         @media screen and (max-width: 479px) {
-            .insta-ui .story-image {
-                width: 30px;
-                height: 30px;
-            }
 
             .insta-ui .upload-part {
                 margin: 0px 7px;
@@ -299,10 +299,10 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="story-box">
-                                <div class="story-text">
+                                <div class="story-plate">
                                     <small>Stories</small>
                                 </div>
-                                <div class="stories-text font-icon">
+                                <div class="story-plate font-icon">
                                     <small><a href=""><i class="fas fa-play me-3"></i></a>Watch all</small>
                                 </div>
                             </div>
@@ -313,7 +313,7 @@
                             <form action="">
                                 <div class="upoad-box">
                                     <!--  -->
-                                    <div class="upload-part">
+                                    <div class="upload-part yours">
                                         <div class="first-story-image select">
                                             <div class="input-group ">
                                                 <input type="file" id="file1" name="image" accept="image/*" capture=""
@@ -325,8 +325,7 @@
                                             </div>
                                         </div>
                                         <div class="story-text">
-                                            <label for="file1" class="lsetting text-muted"> <small>Your Story</small>
-                                            </label>
+                                            <label for="file1" class="lsetting text-muted"> <small>Your Story</small></label>
                                         </div>
                                     </div>
                                     <!--  -->
